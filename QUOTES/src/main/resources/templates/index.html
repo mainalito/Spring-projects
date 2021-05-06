@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+	<title>Anime Quote Application</title>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+
+	<!-- Bootstrap CSS -->
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
+		integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+
+</head>
+
+<body>
+<div class="container">
+	<h1>Random Quote</h1>
+	<table class ="table table-striped">
+		<tr>
+			<th>anime</th>
+			<th>character</th>
+			<th>quote</th>
+		</tr>
+		<tr th:each="quote : ${quotes}">
+			<!-- locationStat is the variable in the loop  we are using -->
+			<td th:text="${quote.anime}"></td>
+			<td th:text="${quote.character}"></td>
+			<td th:text="${quote.quote}">0</td>
+		</tr>
+	</table>
+	<h2>10 quotes</h2>
+	<table class ="table table-striped">
+		<tr>
+			<th>anime</th>
+			<th>character</th>
+			<th>quote</th>
+		</tr>
+		<tr th:each="quotes : ${tenQuotes}">
+			<!-- locationStat is the variable in the loop  we are using -->
+			<td th:text="${quotes.anime}"></td>
+			<td th:text="${quotes.character}"></td>
+			<td th:text="${quotes.quote}">0</td>
+		</tr>
+	</table>
+	
+
+</div>
+</body>
+
+</html>
